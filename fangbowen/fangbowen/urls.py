@@ -19,7 +19,21 @@ from fund import views as fund_views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+
+    #指数信息相关接口
     url(r'^api/fund/getone', fund_views.get_fund),
     url(r'^api/fund/post', fund_views.post_fund),
     url(r'^api/fund/getpage', fund_views.getpage_fund),
+    url(r'^api/fund/update', fund_views.update_fund),
+    url(r'^api/fund/delete', fund_views.delete_fund),
+    url(r'^api/fund/caculate', fund_views.caculate),
+
+    #成分股相关接口
+    url(r'^api/fundpart/getpage', fund_views.getpage_fundpart),
+    url(r'^api/fundpart/import', fund_views.import_fundpart),
+
+    #股票相关接口
+    url(r'^api/stock/getpage', fund_views.getpage_stock),
+    url(r'^api/stock/import', fund_views.import_stockinfo),
+
 ]
